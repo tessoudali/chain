@@ -1,4 +1,4 @@
-FROM ubuntu as builder
+FROM ubuntu:24.10 as builder
 
 ARG PROFILE=release
 WORKDIR /nodle-chain
@@ -15,7 +15,7 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y && \
 
 # ===== SECOND STAGE ======
 
-FROM ubuntu
+FROM ubuntu:24.10
 
 ARG PROFILE=release
 
